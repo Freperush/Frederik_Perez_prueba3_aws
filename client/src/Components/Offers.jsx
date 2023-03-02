@@ -43,7 +43,6 @@ const Offers = () =>{
                     </p> 
                 })
             }
-            <button onClick={(e)=>{navigation('/api/Offer/new')}}>Nuevo</button>
             
         </div>
     );

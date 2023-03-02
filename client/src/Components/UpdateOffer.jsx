@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
 
 const UpdateOffer = () => {
   const { id } = useParams();
@@ -52,6 +54,8 @@ const UpdateOffer = () => {
   return (
     <div>
       <h1>Actualización de Oferta:</h1>
+      <Link to={'/api/offers'}><button> Job offers</button></Link>
+
       <form>
         <p>Job: {job.jobName}</p>
         <p>Salary: {job.earn}</p>
