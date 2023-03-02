@@ -1,3 +1,4 @@
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -5,10 +6,10 @@ import { Link } from 'react-router-dom';
 
 
 const OfferNew = () => {
-    const [job, setJob] = useState({position:'', languages:[], salary: 0});
+    const [job, setJob] = useState({position:'', languages:[], salary: null});
     let navigation = useNavigate();
-    const [positionError, setpositionErrorError] = useState(".");
-    const [salaryError, setsalaryError] = useState(".");
+    const [positionError, setPositionError] = useState("");
+    const [salaryError, setSalaryError] = useState("");
 
 
     const createJobOfferHandler = (e) => {
@@ -27,13 +28,14 @@ const OfferNew = () => {
 
                 console.log(err.response.data);
                 const errorResponse = err.response.data.errors;
-                if(Object.keys(errorResponse).includes('JobName')){
-                    setpositionErrorError(errorResponse['JobName'].message)
-
-                }
-                if(Object.keys(errorResponse).includes('earn')){
-                    setsalaryError(errorResponse['earn'].message)
-                }
+                if(Object.keys(errorResponse).includes('jobName')){
+                    setPositionError(errorResponse['jobName'].message);
+                  }
+                  
+                  if(Object.keys(errorResponse).includes('earn')){
+                    setSalaryError(errorResponse['earn'].message)
+                  }
+                  
                 })
     }
     const handleCheckboxChange = (e) => {
