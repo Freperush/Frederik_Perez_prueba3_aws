@@ -12,7 +12,7 @@ const UpdateOffer = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/user/" + id)
+      .get("http://localhost:8000/api/offer/" + id)
       .then((res) => setOffer(res.data))
       .catch((err) => console.log(err));
   }, [id]);
@@ -44,7 +44,7 @@ const UpdateOffer = () => {
   const OfferHandler = () => {
     console.log(job);
     axios
-      .put(`http://localhost:8000/api/user/${id}`, job)
+      .put(`http://localhost:8000/api/offer/${id}`, job)
       .then((res) => {
         console.log(res);
       })

@@ -7,7 +7,7 @@ const Offers = () =>{
     const [ OfferList, setOfferList ] = useState([]);
     let navigation = useNavigate();
     useEffect(()=>{
-        axios.get("http://localhost:8000/api/users")
+        axios.get("http://localhost:8000/api/offers")
         .then((Offers) => setOfferList(Offers.data))
         .catch((err) => console.log(err))
     }, []);
@@ -17,7 +17,7 @@ const Offers = () =>{
     }
 
     const deleteHandler = (OfferId) =>{
-        axios.delete('http://localhost:8000/api/user/' + OfferId)
+        axios.delete('http://localhost:8000/api/offer/' + OfferId)
             .then( res => {
                 console.log(res);
                 updateOfferDom(OfferId);

@@ -11,8 +11,8 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true })); 
 
-const allUserRoutes = require('./server/routes/user.routes');
-allUserRoutes(app);
+const allOfferRoutes = require('./server/routes/offer.routes');
+allOfferRoutes(app);
 
 app.listen(port, () => {
     console.log("Server listening at port", port);

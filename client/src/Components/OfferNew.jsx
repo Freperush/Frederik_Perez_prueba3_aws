@@ -15,7 +15,7 @@ const OfferNew = () => {
     const createJobOfferHandler = (e) => {
         //Función para realizar una petición PUT y actualizar un usuario
         e.preventDefault();
-        axios.post('http://localhost:8000/api/user/new', {
+        axios.post('http://localhost:8000/api/offer/new', {
             jobName: job.position,
             earn: job.salary,
             languages: job.languages
